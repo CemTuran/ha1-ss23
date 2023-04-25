@@ -90,5 +90,24 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+    @Test
+    @DisplayName("should display result after adding two negative Numbers")
+    void testNegativaAdding() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressNegativeKey();
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+        calc.pressNegativeKey();
+        calc.pressEqualsKey();
+
+        String expected = "-7";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
 }
 
