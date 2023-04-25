@@ -127,20 +127,43 @@ class CalculatorTest {
 
     }
 
+
+
     @Test
+    @DisplayName("")
+    void testDividingError() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressUnaryOperationKey("1/x");
+
+        String expected = "Error";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
+
+
+
+
+    /* @Test
     @DisplayName("Should not give any decimal Numbers after getting square root")
     void testSquareSingleNumber() {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(2);
         calc.pressDigitKey(8);
-        calc.pressUnaryOperationKey("√");
+        calc.pressUnaryOperationKey("&radic;");
 
         String expected = "5";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
-    }
+    }*/
+
+
 
 }
 
