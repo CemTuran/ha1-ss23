@@ -127,5 +127,20 @@ class CalculatorTest {
 
     }
 
+    @Test
+    @DisplayName("Should not give any decimal Numbers after getting square root")
+    void testSquareSingleNumber() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressDigitKey(8);
+        calc.pressUnaryOperationKey("√");
+
+        String expected = "5";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
 }
 
